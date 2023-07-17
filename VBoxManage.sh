@@ -25,7 +25,7 @@ for argument; do
 done
 
 # Redirect to Windows VBoxManage and convert Windows paths back to WSL paths
-echo "${args[@]}" | xargs /mnt/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe | sed -r '/[A-Za-z]:\\.*$/{h; s/(.*)([A-Za-z]:\\.*)$/\2/; s/(.+)/wslpath "\1"/e; H; x; s/(([A-Za-z]:\\.*)\n(.+))/\3/ }'
+echo "${args[@]}" | xargs /mnt/d/Program\ Files/Oracle/VirtualBox/VBoxManage.exe | sed -r '/[A-Za-z]:\\.*$/{h; s/(.*)([A-Za-z]:\\.*)$/\2/; s/(.+)/wslpath "\1"/e; H; x; s/(([A-Za-z]:\\.*)\n(.+))/\3/ }'
 
 # /[A-Za-z]:\\.*$/ # Find lines that end with Windows paths
 #  { # For each line
